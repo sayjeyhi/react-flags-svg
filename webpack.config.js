@@ -20,7 +20,8 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel?loose=all' }
+      { test: /\.(jpe?g|png|gif|svg)$/, loader: 'url', query: {limit: 10240} },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel?loose=all' },
     ]
   },
 

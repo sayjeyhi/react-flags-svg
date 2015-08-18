@@ -25,7 +25,7 @@ class Flag extends Component {
         lineHeight: '1em',
 
         ':before': {
-          content: '\00a0',
+          content: '',
         }
       },
       square: {
