@@ -1,0 +1,36 @@
+{
+  "name": "react-flags",
+  "version": "0.0.1",
+  "description": "Flags as react components",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel ./modules -d lib --ignore '__tests__'",
+    "build-umd": "NODE_ENV=production webpack modules/index.js lib/umd/ReactFlags.js",
+    "build-min": "NODE_ENV=production webpack -p modules/index.js lib/umd/ReactFlags.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreimc/react-flags.git"
+  },
+  "keywords": [
+    "react",
+    "flags",
+    "intl"
+  ],
+  "author": "Andrei Miulescu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreimc/react-flags/issues"
+  },
+  "homepage": "https://github.com/andreimc/react-flags#readme",
+  "devDependencies": {
+    "babel": "^5.8.20",
+    "babel-core": "^5.8.20",
+    "babel-eslint": "^3.1.23",
+    "babel-loader": "^5.0.0",
+    "react": "^0.13.3",
+    "rf-changelog": "^0.4.0",
+    "webpack": "^1.9.11"
+  }
+}
