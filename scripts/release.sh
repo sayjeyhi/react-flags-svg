@@ -28,12 +28,8 @@ update_version 'package.json' $next_version
 $changelog -t $next_ref
 
 npm run build
-npm run build-umd
-npm run build-min
 
-echo "gzipped, the UMD build is `gzip -c lib/umd/ReactFlags.min.js | wc -c | sed -e 's/^[[:space:]]*//'` bytes"
-
-git add -A lib/umd
+git add -A lib
 git commit -am "Version $next_version"
 
 git tag $next_ref
