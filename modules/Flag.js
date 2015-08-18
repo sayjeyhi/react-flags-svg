@@ -9,11 +9,6 @@ class Flag extends Component {
     countryCode: PropTypes.string.isRequired,
   }
 
-  constructor(props) {
-    super(props);
-    this.state = this.props;
-  }
-
   render() {
     const styles = {
       base:{
@@ -35,13 +30,13 @@ class Flag extends Component {
         width: '1.333333em',
       },
       currentFlag: {
-        backgroundImage: `url(../flags/${this.state.formFactor}/${this.state.countryCode}.svg)`
+        backgroundImage: `url(../flags/${this.props.formFactor}/${this.props.countryCode}.svg)`
       }
     }
 
     return (
       <div>
-        <span style={[styles.base, styles[this.state.formFactor], styles.currentFlag]} />
+        <span style={[styles.base, styles[this.props.formFactor], styles.currentFlag]} />
       </div>
       );
   }
