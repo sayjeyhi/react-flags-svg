@@ -1,8 +1,8 @@
-import { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 
 @Radium
-class Flag extends Component {
+export class Flag extends Component {
 
   static propTypes = {
     formFactor: PropTypes.oneOf(['square', 'normal']).isRequired,
@@ -35,7 +35,7 @@ class Flag extends Component {
         width: '1.333333em',
       },
       currentFlag: {
-        backgroundImage: url(`../flags/${this.state.formFactor}/${this.state.countryCode}.svg`)
+        backgroundImage: `url(../flags/${this.state.formFactor}/${this.state.countryCode}.svg)`
       }
     }
 
@@ -47,5 +47,3 @@ class Flag extends Component {
   }
 
 }
-
-export default Flag;
