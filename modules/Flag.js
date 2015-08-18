@@ -45,3 +45,5 @@ class Flag extends Component {
   }
 
 }
+
+export default Flag;
