@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Radium from 'radium';
 
 @Radium
-export class Flag extends Component {
+class Flag extends Component {
 
   static propTypes = {
     formFactor: PropTypes.oneOf(['square', 'normal']).isRequired,
