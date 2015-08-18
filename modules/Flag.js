@@ -40,8 +40,10 @@ class Flag extends Component {
     }
 
     return (
-      <span style={[styles.base, styles[this.state.formFactor], styles.currentFlag]} />
-    );
+      <div>
+        <span style={[styles.base, styles[this.state.formFactor], styles.currentFlag]} />
+      </div>
+      );
   }
 
 }
