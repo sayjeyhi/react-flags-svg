@@ -1,6 +1,6 @@
 {
   "name": "react-flags-svg",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Flags as react components",
   "main": "lib/index",
   "scripts": {
