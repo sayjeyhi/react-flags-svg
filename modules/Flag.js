@@ -1,44 +1,44 @@
 import React, { Component, PropTypes } from 'react';
-import Radium from 'radium';
 
-@Radium
-class Flag extends Component {
+export default class Flag extends Component {
 
   static propTypes = {
     formFactor: PropTypes.oneOf(['square', 'normal']).isRequired,
     countryCode: PropTypes.string.isRequired,
+    size: PropTypes.number
   }
 
   render() {
+    const {formFactor, countryCode, size} = this.props
+    const flagFile = require(`../flags/${formFactor}/${countryCode}.svg`)
     const styles = {
       base:{
         backgroundSize: 'contain',
         backgroundPosition: '50%',
         backgroundRepeast: 'no-repeat',
-        position: 'relative',
         display: 'inline-block',
-        lineHeight: '1em',
-
-        ':before': {
-          content: '',
-        }
+        verticalAlign: 'middle',
+        width: size
       },
       square: {
-        width: '1em',
+        height: size
       },
       normal: {
-        width: '1.333333em',
+        height: Math.round((size / 1.333333) * 1)
       },
       currentFlag: {
-        backgroundImage: `url(../flags/${this.props.formFactor}/${this.props.countryCode}.svg)`
+        backgroundImage: `url(${flagFile})`
       }
     }
 
     return (
-      <div>
-        <span style={[styles.base, styles[this.props.formFactor], styles.currentFlag]} />
-      </div>
-      );
+      <span style={Object.assign({}, styles.base, styles[formFactor], styles.currentFlag)} />
+    );
   }
 
+}
+
+Flag.defaultProps = {
+  formFactor: 'normal',
+  size: 24
 }
