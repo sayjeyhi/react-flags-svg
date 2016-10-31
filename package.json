@@ -4,7 +4,7 @@
   "description": "Flags as react components",
   "main": "lib/index",
   "scripts": {
-    "build": "babel ./modules -d lib --ignore '__tests__'",
+    "build": "babel --presets es2015,react,stage-0 --optional runtime -d lib/ modules/",
     "build-umd": "NODE_ENV=production webpack modules/index.js lib/umd/ReactFlags.js",
     "build-min": "NODE_ENV=production webpack -p modules/index.js lib/umd/ReactFlags.min.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,16 +25,20 @@
   },
   "homepage": "https://github.com/andreimc/react-flags#readme",
   "dependencies": {
-    "radium": "^0.13.7"
+    "react": "^15.1.0"
   },
   "devDependencies": {
-    "babel": "^5.8.20",
-    "babel-core": "^5.8.20",
-    "babel-eslint": "^3.1.23",
-    "babel-loader": "^5.0.0",
-    "url-loader": "^0.5.6",
-    "react": "^0.13.3",
+    "babel-cli": "^6.4.0",
+    "babel-core": "^6.4.0",
+    "babel-eslint": "^4.1.6",
+    "babel-loader": "^6.2.1",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.5.0",
+    "file-loader": "^0.8.5",
     "rf-changelog": "^0.4.0",
-    "webpack": "^1.9.11"
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.11"
   }
 }
