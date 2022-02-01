@@ -1,5 +1,5 @@
 {
-  "name": "react-flags-svg",
+  "name": "react-flagsy",
   "version": "1.0.0",
   "description": "Flags as react components",
   "main": "lib/index",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/andreimc/react-flags#readme",
   "dependencies": {
-    "react": "^15.1.0"
+    "react": "^16.3.1"
   },
   "devDependencies": {
     "babel-cli": "^6.4.0",
